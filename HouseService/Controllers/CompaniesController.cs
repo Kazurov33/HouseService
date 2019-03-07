@@ -10,7 +10,10 @@ using Microsoft.EntityFrameworkCore;
 namespace HouseService.Controllers
 {
     [Route("api")]
-    public class CompaniesController : Controller
+    [Produces("application/json")]
+    [ApiController]
+
+    public class CompaniesController : ControllerBase
     {
         private readonly ApplicationDbContext _appDbContext;
         public CompaniesController(ApplicationDbContext appDbContext)
@@ -19,6 +22,7 @@ namespace HouseService.Controllers
         }
 
         [HttpGet]
+        [Route("Companies")]
         public IActionResult GetAllCompany()
         {
             return Ok(_appDbContext.Companies);

@@ -32,7 +32,7 @@ namespace HouseService.Data
             {
                 var _admin = new AppUser
                 {
-                    UserName = "admin",
+                    UserName = "admin@hcs.com",
                     Email = "admin@hcs.com",
                     FirstName = "admin",
                     LastName = ""
@@ -62,7 +62,7 @@ namespace HouseService.Data
             {
                 var _manager = new AppUser
                 {
-                    UserName = "manager",
+                    UserName = "manager@hcs.com",
                     Email = "manager@hcs.com",
                     FirstName = "manager",
                     LastName = ""
@@ -87,7 +87,7 @@ namespace HouseService.Data
             {
                 var _dispatcher = new AppUser
                 {
-                    UserName = "dispatcher",
+                    UserName = "dispatcher@hcs.com",
                     Email = "dispatcher@hcs.com",
                     FirstName = "dispatcher",
                     LastName = ""

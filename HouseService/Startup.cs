@@ -37,7 +37,8 @@ namespace HouseService
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<AppUser, IdentityRole>(options => {
+            services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
                 // configure identity options
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
@@ -45,8 +46,8 @@ namespace HouseService
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequiredLength = 6;
             })
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders(); 
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+                ///.AddDefaultTokenProviders(); 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -71,7 +72,8 @@ namespace HouseService
 
             app.UseAuthentication();
 
-            app.UseMvc(routes =>
+            app.UseMvc(
+                routes =>
             {
                 routes.MapRoute(
                     name: "default",
